@@ -155,3 +155,31 @@ void buscarItem() {
     }
     printf("Item não encontrado!\n");
 }
+
+/* ======================================================
+   Módulo avançado: Priorização e montagem dos componentes
+   - Implementa estruturas e algoritmos de ordenação
+   - Contabiliza comparações e tempo de execução
+   - Busca binária sobre ordenação por nome
+   ====================================================== */
+
+#define MAX_COMPONENTES 20
+
+typedef struct {
+    char nome[30];
+    char tipo[20];
+    int prioridade; // 1 (mais baixo) .. 10 (mais alto)
+} Componente;
+
+// Protótipos das funções do módulo de componentes
+void cadastrarComponentes(Componente comp[], int *n);
+void mostrarComponentes(Componente comp[], int n);
+long bubbleSortNome(Componente comp[], int n); // retorna número de comparações
+long insertionSortTipo(Componente comp[], int n);
+long selectionSortPrioridade(Componente comp[], int n);
+int buscaBinariaPorNome(Componente comp[], int n, const char chave[], long *comparacoes);
+
+// Função auxiliar para remover newline de fgets
+void trim_newline(char *s) {
+    s[strcspn(s, "
+")] = '
