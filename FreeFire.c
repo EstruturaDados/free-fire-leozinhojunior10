@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include <time.h> // Para medir tempo de execução
 
 #define MAX_ITENS 10
 
@@ -18,11 +19,34 @@ void removerItem();
 void listarItens();
 void buscarItem();
 
+// Protótipos adicionais para vetor e lista
+void inserirItemVetor();
+void removerItemVetor();
+void ordenarVetor();
+void buscarSequencialVetor();
+void buscarBinariaVetor();
+
+// Protótipos para lista encadeada
+void inserirItemLista();
+void removerItemLista();
+void listarItensLista();
+void buscarItemLista();
+
 int main() {
     int opcao;
 
     do {
-        printf("\n========== SISTEMA DE INVENTÁRIO =========\n");
+        printf("
+========== SISTEMA DE INVENTÁRIO =========\n");
+        printf("Escolha o tipo de estrutura:
+");
+        printf("1. Vetor de Itens
+");
+        printf("2. Lista Encadeada
+");
+        printf("0. Sair
+");
+        printf("Escolha uma opção: "););
         printf("1. Inserir Item\n");
         printf("2. Remover Item\n");
         printf("3. Listar Itens\n");
